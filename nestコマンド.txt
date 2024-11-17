@@ -1,0 +1,3 @@
+[0.0.1]
+npm i -g @nestjs/cli
+nest new townPlanning-api
