@@ -1,0 +1,10 @@
+[0.0.1] NestJS API プロジェクトの初期設定
+npm i -g @nestjs/cli
+nest new townPlanning-api
+
+cd town-planning-api
+
+[0.0.2] 
+nest generate module estate-transaction/module/estate-transaction
+nest generate controller estate-transaction/controller/estate-transaction
+npm install dotenv
