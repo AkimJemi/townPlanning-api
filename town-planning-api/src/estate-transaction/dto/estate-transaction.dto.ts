@@ -1,9 +1,9 @@
 export class EstateTransactionDto {
   year: Date;
 
-  prefectureCode: number;
+  prefCode: number;
 
-  type: string;
+  cityCode: string;
 
-  value: string;
+  displayType: string;
 }

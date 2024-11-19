@@ -22,3 +22,7 @@ npx prettier --write .
 ※参照用Gitコマンド
 git reset --soft HEAD~1
 git push origin main --force
+
+[0.0.4] Postgres DB設定
+npm install --save @nestjs/typeorm typeorm pg
+npm install @nestjs/config
