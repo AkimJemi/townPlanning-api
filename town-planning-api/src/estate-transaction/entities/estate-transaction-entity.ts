@@ -3,18 +3,18 @@ import { Entity, Column, PrimaryColumn } from 'typeorm';
 @Entity('estate_transaction')
 export class EstateTransactionEntity {
 
-    @PrimaryColumn({ name: 'prefecture_code', type: 'text' })
-    prefectureCode: string;
+    @PrimaryColumn({ type: 'text' })
+    prefecture_code: string;
 
-    @PrimaryColumn({ name: 'prefecture_name', type: 'text' })
-    prefectureName: string;
+    @PrimaryColumn({ type: 'text' })
+    prefecture_name: string;
 
-    @PrimaryColumn({ name: 'number', type: 'int' })
-    type: number;
+    @PrimaryColumn({ type: 'text' })
+    type: string;
 
-    @Column({ name: 'year', type: 'int' })
+    @Column({ type: 'int' })
     year: number;
 
-    @Column({ name: 'value', type: 'int' })
+    @Column({ type: 'int' })
     value: number;
 }

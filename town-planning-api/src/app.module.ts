@@ -24,7 +24,8 @@ import { EstateTransactionEntity } from './estate-transaction/entities/estate-tr
         synchronize: true,
       }),
       inject: [ConfigService],
-    })
+    }),
+    TypeOrmModule.forFeature([EstateTransactionEntity])
   ],
   controllers: [AppController, EstateTransactionController],
   providers: [

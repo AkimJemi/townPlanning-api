@@ -1,9 +1,24 @@
+import { Expose } from 'class-transformer';
+
 export class EstateTransactionDto {
-  year: Date;
+  year: number;
 
   prefCode: number;
 
-  cityCode: string;
+  cityCode: number;
 
-  displayType: string;
+  displayType: number;
+}
+export class EstateTransactionResponseDto {
+  @Expose()
+  prefectureCode: string;
+
+  @Expose()
+  prefectureName: string;
+
+  @Expose()
+  type: string;
+
+  @Expose()
+  years: { year: number; value: number }[];
 }
