@@ -2,9 +2,23 @@
 npm i -g @nestjs/cli
 nest new townPlanning-api
 
+--ディレクトリ移動
 cd town-planning-api
 
-[0.0.2] 
-nest generate module estate-transaction/module/estate-transaction
-nest generate controller estate-transaction/controller/estate-transaction
+[0.0.2] estate-transaction 3層構造
 npm install dotenv
+nest generate module estate-transaction/module/estate-transaction --flat
+nest generate controller estate-transaction/controller/estate-transaction --flat
+nest generate service estate-transaction/service/estate-transaction --flat
+nest generate class estate-transaction/repository/estate-transaction.repository --flat
+
+[0.0.3] リンター、フォーマッター設定
+npm install eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin --save-dev
+npx eslint --init
+npx eslint src/**/*.ts
+npm install prettier eslint-config-prettier eslint-plugin-prettier --save-dev
+npx prettier --write .
+
+※参照用Gitコマンド
+git reset --soft HEAD~1
+git push origin main --force

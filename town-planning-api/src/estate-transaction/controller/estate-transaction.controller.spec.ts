@@ -9,7 +9,9 @@ describe('EstateTransactionController', () => {
       controllers: [EstateTransactionController],
     }).compile();
 
-    controller = module.get<EstateTransactionController>(EstateTransactionController);
+    controller = module.get<EstateTransactionController>(
+      EstateTransactionController,
+    );
   });
 
   it('should be defined', () => {

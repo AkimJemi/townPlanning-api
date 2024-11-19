@@ -9,6 +9,10 @@ import { EstateTransactionRepository } from './estate-transaction/repository/est
 @Module({
   imports: [EstateTransactionModule],
   controllers: [AppController, EstateTransactionController],
-  providers: [AppService, EstateTransactionService, EstateTransactionRepository],
+  providers: [
+    AppService,
+    EstateTransactionService,
+    EstateTransactionRepository,
+  ],
 })
-export class AppModule { }
+export class AppModule {}
