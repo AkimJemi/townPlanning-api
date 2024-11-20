@@ -35,3 +35,6 @@ npm install class-transformer class-validator
 
 [0.0.7] 取引価格、クエリパラメーターのバリデーション
 ※無し
+
+[0.0.8] ➀実行手順作成、②バージョン管理用Swagger設定
+npm install @nestjs/swagger swagger-ui-express

@@ -1,0 +1,7 @@
+◇プロジェクト実行前、下記の項目をご確認したうえ、実行お願いします。
+
+➀ローカルDB情報を基づいて、下記のプロジェクトDB接続設定ファイル[.env]修正
+./townPlanning/town-planning-api/.env
+
+②postgres接続して、postgresユーザーで下記のSQLを実行し、必要なデータベースの作成とデータの登録を行う。
+./townPlanning/town-planning-api/prisma/town-planning-api_init.sql
