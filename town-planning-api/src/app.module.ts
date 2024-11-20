@@ -1,12 +1,7 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { EstateTransactionModule } from './estate-transaction/module/estate-transaction.module';
-import { EstateTransactionController } from './estate-transaction/controller/estate-transaction.controller';
-import { EstateTransactionService } from './estate-transaction/service/estate-transaction.service';
-import { EstateTransactionRepository } from './estate-transaction/repository/estate-transaction.repository';
 import { EstateTransactionEntity } from './estate-transaction/entities/estate-transaction-entity';
 
 @Module({
@@ -24,14 +19,7 @@ import { EstateTransactionEntity } from './estate-transaction/entities/estate-tr
         synchronize: true,
       }),
       inject: [ConfigService],
-    }),
-    TypeOrmModule.forFeature([EstateTransactionEntity])
-  ],
-  controllers: [AppController, EstateTransactionController],
-  providers: [
-    AppService,
-    EstateTransactionService,
-    EstateTransactionRepository,
-  ],
+    })
+  ]
 })
 export class AppModule { }

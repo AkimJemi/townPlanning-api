@@ -1,4 +1,8 @@
+CREATE DATABASE town_planning_api;
+
 CREATE SCHEMA IF NOT EXISTS town_planning_api_schema;
+
+DROP TABLE IF EXISTS town_planning_api_schema.estate_transaction;
 
 CREATE TABLE IF NOT EXISTS town_planning_api_schema.estate_transaction (
     "prefecture_code" TEXT NOT NULL,
@@ -10,7 +14,8 @@ CREATE TABLE IF NOT EXISTS town_planning_api_schema.estate_transaction (
         "prefecture_code",
         "prefecture_name",
         "type",
-        "year"
+        "year",
+        "value"
     )
 );
 
