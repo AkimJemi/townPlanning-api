@@ -1,5 +1,6 @@
 CREATE DATABASE town_planning_api;
 
+-- 「town_planning_api」データベースに接続した後、下記のコマンドを実行する。
 CREATE SCHEMA IF NOT EXISTS town_planning_api_schema;
 
 DROP TABLE IF EXISTS town_planning_api_schema.estate_transaction;

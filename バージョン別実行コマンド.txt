@@ -38,3 +38,7 @@ npm install class-transformer class-validator
 
 [0.0.8] ➀実行手順作成、②バージョン管理用Swagger設定
 npm install @nestjs/swagger swagger-ui-express
+
+[0.0.9] ➀[クエリDTO, リスポンスDTOの分離]、②クエリDTO変数名称修正、③[Controller > UseCase > Repository > Infrastructureの再構造]、③README.mdファイル修正
+※無し
+
