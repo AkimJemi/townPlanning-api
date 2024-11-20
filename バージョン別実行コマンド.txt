@@ -33,3 +33,5 @@ npm install class-transformer class-validator
 [0.0.6] ソース整理（不要なコード削除）
 ※無し
 
+[0.0.7] 取引価格、クエリパラメーターのバリデーション
+※無し
