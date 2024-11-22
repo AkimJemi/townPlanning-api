@@ -37,7 +37,7 @@
 
    - ディレクトリ移動: `cd townPlanning-api/town-planning-api`  
    - 依存関係インストール: `npm install`  
-   - プロジェクト起動: `npm start`  
+   - プロジェクト起動: `npm start`  ※開発用： `npm run start:dev`   
 
 2. ブラウザで以下のURLを開き、レスポンスを確認します：
 

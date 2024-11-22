@@ -14,7 +14,7 @@ async function bootstrap() {
   const config = new DocumentBuilder()
     .setTitle('不動産取引価格を検索するAPI')
     .setDescription('NestJS 不動産取引価格を検索するAPI')
-    .setVersion('0.0.9')
+    .setVersion('0.1.0')
     .build();
 
   const document = SwaggerModule.createDocument(app, config);

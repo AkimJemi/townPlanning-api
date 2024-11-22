@@ -23,3 +23,17 @@ export class EstateTransactionQueryDto {
   @IsIn([1, 2])
   type: number;
 }
+export class EstateTransactionFindQueryDto {
+
+  @IsInt()
+  @Type(() => Number)
+  year: number;
+
+  @IsInt()
+  @Type(() => Number)
+  prefectureCode: number;
+
+  @IsInt()
+  @Type(() => Number)
+  type: number;
+}

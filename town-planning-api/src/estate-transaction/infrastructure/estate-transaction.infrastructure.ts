@@ -1,17 +1,46 @@
-import { EstateTransactionResponseDto, } from '../dto/estate-transaction.response.dto';
+import { EstateTransactionFindResponseDto, EstateTransactionResponseDto, } from '../dto/estate-transaction.response.dto';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { EstateTransactionEntity } from '../entities/estate-transaction-entity';
-import { EstateTransactionQueryDto } from '../dto/estate-transaction.query.dto ';
+import { EstateTransactionQueryDto, EstateTransactionFindQueryDto } from '../dto/estate-transaction.query.dto ';
+import { EstateTransactionRepository } from '../repository/estate-transaction.repository';
+import { addQuotes } from '../../common/common-function'
 
 @Injectable()
-export class EstateTransactionInfrastructure {
+export class EstateTransactionInfrastructure implements EstateTransactionRepository {
 
     constructor(
         @InjectRepository(EstateTransactionEntity)
         private readonly estateTransactionRepository: Repository<EstateTransactionEntity>,
     ) { }
+
+    async findAllByInputInfo(estateDto: EstateTransactionFindQueryDto): Promise<EstateTransactionFindResponseDto[]> {
+        const query: string[] = [];
+
+        if (estateDto.year) {
+            query.push("year = " + addQuotes(estateDto.year))
+        }
+        if (estateDto.prefectureCode) {
+            query.push("prefecture_code = " + addQuotes(estateDto.prefectureCode))
+        }
+        if (estateDto.type) {
+            query.push("type = " + addQuotes(estateDto.type))
+        }
+        const query_result: string = query.length > 0 ? "WHERE " + query.join(" AND ") : "";
+        console.log(query_result)
+        const results: EstateTransactionEntity[] = await this.estateTransactionRepository.query(
+            `SELECT * FROM town_planning_api_schema.estate_transaction ${query_result}`
+        );
+        return results.map((result) => ({
+            prefectureCode: result.prefecture_code,
+            prefectureName: result.prefecture_name,
+            type: result.type,
+            year: result.year,
+            value: result.value,
+        }));
+    }
+
 
     async getEstateInfo(estateDto: EstateTransactionQueryDto): Promise<EstateTransactionResponseDto> {
         const results: EstateTransactionEntity[] = await this.estateTransactionRepository.query(
