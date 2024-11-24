@@ -6,3 +6,4 @@ export interface EstateTransactionRepository {
 
     findAllByInputInfo(estateDto: EstateTransactionFindQueryDto): Promise<EstateTransactionFindResponseDto[]>
 }
+export const ESTATE_TRANSACTION_REPOSITORY = Symbol('EstateTransactionRepository');

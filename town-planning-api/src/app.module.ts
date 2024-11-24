@@ -5,7 +5,10 @@ import { EstateTransactionModule } from './estate-transaction/module/estate-tran
 import { EstateTransactionEntity } from './estate-transaction/entities/estate-transaction-entity';
 
 @Module({
-  imports: [EstateTransactionModule,
+  imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
       useFactory: (configService: ConfigService) => ({
@@ -19,7 +22,8 @@ import { EstateTransactionEntity } from './estate-transaction/entities/estate-tr
         synchronize: true,
       }),
       inject: [ConfigService],
-    })
+    }),
+    EstateTransactionModule,
   ]
 })
 export class AppModule { }

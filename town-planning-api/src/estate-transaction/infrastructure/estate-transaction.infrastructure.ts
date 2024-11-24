@@ -17,7 +17,6 @@ export class EstateTransactionInfrastructure implements EstateTransactionReposit
 
     async findAllByInputInfo(estateDto: EstateTransactionFindQueryDto): Promise<EstateTransactionFindResponseDto[]> {
         const query: string[] = [];
-
         if (estateDto.year) {
             query.push("year = " + addQuotes(estateDto.year))
         }
@@ -28,7 +27,6 @@ export class EstateTransactionInfrastructure implements EstateTransactionReposit
             query.push("type = " + addQuotes(estateDto.type))
         }
         const query_result: string = query.length > 0 ? "WHERE " + query.join(" AND ") : "";
-        console.log(query_result)
         const results: EstateTransactionEntity[] = await this.estateTransactionRepository.query(
             `SELECT * FROM town_planning_api_schema.estate_transaction ${query_result}`
         );

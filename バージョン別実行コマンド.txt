@@ -45,3 +45,6 @@ npm install @nestjs/swagger swagger-ui-express
 →ブランチ名：new-branch-API
 [0.1.0] 不動産取引のフィルタリングのための動的クエリ生成を追加
 git checkout -b new-branch_API
+
+[0.1.1] ➀[Controller > UseCase > Repository > Infrastructureの再構造]修正
+※無し
