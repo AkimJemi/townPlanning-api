@@ -1,8 +1,9 @@
-import { Controller, Get, Query } from '@nestjs/common';
+import { Controller, Get, Query, UseGuards } from '@nestjs/common';
 import { EstateTransactionUseCase } from '../use-case/estate-transaction.use-case';
 import { EstateTransactionFindResponseDto, EstateTransactionResponseDto } from '../dto/estate-transaction.response.dto';
 import { EstateTransactionQueryDto, EstateTransactionFindQueryDto } from '../dto/estate-transaction.query.dto ';
-
+import { ApiKeyGuard } from 'src/guards/api-key.guard';
+@UseGuards(ApiKeyGuard)
 @Controller('estateTransaction')
 export class EstateTransactionController {
     constructor(
